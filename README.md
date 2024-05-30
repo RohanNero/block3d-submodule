@@ -27,9 +27,17 @@ Block3d can be quickly installed by running this command:
 npm install block3d
 ```
 
+If you don't already have these installed, make sure to run this command as well:
+
+```shell
+npm install wagmi @rainbow-me/rainbowkit
+```
+
 ### Git Submodule
 
 Block3d also comes in the form of a git submodule. This allows you to quickly integrate the toolkit and, with minimal effort, be compatible with any future upgrades while maintaining a distinct separation of the submodule and the parent directory. This way you can also fork Block3d and directly edit it however you want.
+
+
 
 ```shell
 git submodule add https://github.com/RohanNero/block3d-submodule
