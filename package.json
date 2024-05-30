@@ -1,22 +1,20 @@
 {
-  "name": "block3d",
-  "version": "0.2.12",
+  "name": "block3d-submodule",
+  "version": "0.1.0",
   "author": "Rohan Nero",
   "license": "GPL-3.0-only",
   "private": false,
   "description": "Streamlining access control with customizable rule-based configuration",
   "main": "src/index.ts",
   "module": "src/index.ts",
-  "types": "dist/types.d.ts",
+  "types": "src/types.d.ts",
   "files": [
     "dist",
     "public"
   ],
   "scripts": {
     "dev": "next dev",
-    "build": "rm -rf dist/* && rollup -c && npm run format && npm run fix-styles-path",
-    "format": "mv dist/esm/styles.css dist/",
-    "fix-styles-path": "node fix-styles-path.js",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },

@@ -8,13 +8,12 @@ export * from "./components/QRCodeModal";
 // Export hooks
 export { useBlock3r } from "./hooks/useBlock3r";
 
-// Export types
-export * from "./types/block3d";
-
 // Export utils
-export * from "./utils/checkSimpleRules";
-export * from "./utils/checkTokenRules";
-export * from "./utils/checkIsRoutePublic";
+export {getRpcUrls} from "./utils/getRpcUrls";
+export {checkSimpleRules} from "./utils/checkSimpleRules";
+export {checkTokenRules} from "./utils/checkTokenRules";
+export {checkNftRules} from "./utils/checkNftRules";
+export {checkIsRoutePublic} from "./utils/checkIsRoutePublic";
 
 // Import CSS
 
