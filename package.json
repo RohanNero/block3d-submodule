@@ -12,6 +12,7 @@
     "dist",
     "public"
   ],
+  "keywords": ["blockchain", "wagmi", "rainbowkit"],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
