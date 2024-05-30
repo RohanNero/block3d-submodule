@@ -81,7 +81,7 @@ This section goes over the `blocked.config.ts` file in detail. The app regularly
 
 ### Creating config
 
-Begin by creating a `block3d.config.ts` file at your project's root. Next, create a `block3dConfig` object and make sure it is marked as export default.
+Begin by creating a `block3d.config.ts` file at your project's root. Next, create a `block3dConfig` object and make sure it is exported.
 
 ```typescript
 /*  block3d.config.ts  */
