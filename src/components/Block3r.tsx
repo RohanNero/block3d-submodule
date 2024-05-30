@@ -3,7 +3,7 @@ import React from "react";
 import { Config, WagmiProvider } from "wagmi";
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
-import Block3rContent from "./Block3rContent";
+import {Block3rContent} from "./Block3rContent";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "../../styles.css";
 import { Block3dConfig } from "../types";
