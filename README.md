@@ -115,13 +115,13 @@ type Contract = {
 
 There are three different types of rules:
 
-- simple rules are the most basic type and allow you to essentially whitelist any set of addresses that can then view your restricted pages. These rules consist of a `title`, `type`, and `addresses` field.
-- token rules allow you to restrict pages based on addresses that hold a `minimumBal` of any specified token. These rules consist of a `title`, `type`, `contract`, and at least one global `minimumBal` OR at least one `minimumBal` for each contract object.
-- nft rules are identical to token rules except that they pertain to **ERC-721** instead of **ERC-20**.
+- `simple` rules are the most basic type and allow you to essentially whitelist any set of addresses that can then view your restricted pages. These rules consist of a `title`, `type`, and `addresses` field.
+- `token` rules allow you to restrict pages based on addresses that hold a `minimumBal` of any specified token. These rules consist of a `title`, `type`, `contract`, and at least one global `minimumBal` OR at least one `minimumBal` for each contract object.
+- `nft` rules are identical to token rules except that they pertain to **ERC-721** instead of **ERC-20**.
 
 #### `title`
 
-This can be any arbitrary string but should describe its corresponding rule since it may be exposed to users on the front end.
+This can be any arbitrary string but should be short and describe its corresponding rule since it will be exposed to users on the front end.
 
 #### `addresses`
 
@@ -129,7 +129,7 @@ This is an array of Ethereum addresses in string form and is only used in simple
 
 #### `minimumBal`
 
-This is a string representation of the minimum number of tokens/nfts that must be held by users to meet the rule criteria. Used only in token and nft rules. Remember to account for decimals.
+This is a string representation of the minimum number of tokens/nfts that must be held by users to meet the rule criteria. Used only in token and nft rules. Remember to account for token decimals.
 
 #### `contracts`
 
@@ -141,9 +141,9 @@ Used only in token and nft rules, this is an array of Contract objects that incl
 
 #### `strict`
 
-Used only in token and nft rules, this behaves similarly to the strict field that lives directly inside the `block3dConfig` object. It is a `boolean` that when set to true, means every Contract inside the contract array is included when deciding if a user can view the page. If set to false, a minimum of one contract must meet the rule criteria. Defaults to false.
+Used only in token and nft rules, this behaves similarly to the `strict` field that lives directly inside the `block3dConfig` object. It is a `boolean` that when set to true, means every `Contract` inside the `contracts` array is included when deciding if a user can view the page. If set to false, a minimum of one contract must meet the rule criteria. Defaults to false.
 
-For example, a developer using token rule type with strict set to false, could have 3 separate Contract objects in the contract array all representing the same token but on different chains. This way users can still view your app as long as they hold the `minimumBal` on one of the chains.
+For example, a developer using `token` rule type with `strict` set to false, could have 3 separate `Contract` objects in the `contracts` array all representing the same token but on different chains. This way users can still view your app as long as they hold the `minimumBal` on one of the chains.
 
 ### Examples
 
