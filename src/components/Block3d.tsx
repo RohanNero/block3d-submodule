@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { Block3dConnectButton } from "./Block3dConnectButton";
-import { UserData } from "../types/block3d";
-import { Block3dTable } from "./Block3dTable";
+import {Block3dConnectButton} from "./Block3dConnectButton";
+import { UserData } from "../types";
+import {Block3dTable}  from "./Block3dTable";
 
 const block3dLogo = require("../../public/logo.png");
 const githubLogo = require("../../public/github-mark-white.png");
@@ -10,7 +10,7 @@ const githubLogo = require("../../public/github-mark-white.png");
 /**
  * @dev This component is displayed to the user when they aren't able to view the page
  */
-const Block3d = ({ userData }: { userData: UserData | undefined }) => {
+export function Block3d ({ userData }: { userData: UserData | undefined }) {
   /* Main display containing a table of all failing rules and a connect button */
   return (
     <div className="text-center font-main flex flex-col h-screen gap-2 items-center">
@@ -144,4 +144,3 @@ const Block3d = ({ userData }: { userData: UserData | undefined }) => {
   );
 };
 
-export default Block3d;

@@ -1,9 +1,10 @@
 // Export components
-export * from "./components/Block3d";
-export * from "./components/Block3dConnectButton";
-export * from "./components/Block3r";
-export * from "./components/Block3rContent";
-export * from "./components/QRCodeModal";
+export {Block3d} from "./components/Block3d";
+export {Block3dConnectButton} from "./components/Block3dConnectButton";
+export {Block3r} from "./components/Block3r";
+export {Block3rContent} from "./components/Block3rContent";
+export {QRCodeModal} from "./components/QRCodeModal";
+export {Block3dTable} from "./components/Block3dTable"
 
 // Export hooks
 export { useBlock3r } from "./hooks/useBlock3r";

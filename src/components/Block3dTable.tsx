@@ -10,7 +10,7 @@ import {
   TableCell,
   getKeyValue,
 } from "@nextui-org/react";
-import { UserData } from "../types/block3d";
+import { UserData } from "../types";
 
 interface RowData {
   key: number;
@@ -20,7 +20,7 @@ interface RowData {
 }
 
 /* This is a nextui table containing a list of rules the user is failing/not meeting criteria for */
-export function Block3dTable({ userData }: { userData: UserData | undefined }) {
+export function Block3dTable ({ userData }: { userData: UserData | undefined }) {
   /* Boolean representing whether or not the user is currently failing any token or nft rules (used to conditionally render `minimumBal`) */
   const hasTokenOrNftRules =
     (userData?.token?.failing?.length ?? 0) > 0 ||
