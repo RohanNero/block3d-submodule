@@ -10,7 +10,7 @@ interface QRCodeModalProps {
   address: string;
 }
 
-export function QRCodeModal ({
+export function QRCodeModal({
   qrModalVisible,
   setQrModalVisible,
   address,

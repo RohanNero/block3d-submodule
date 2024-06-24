@@ -11,7 +11,7 @@ import { QRCodeModal } from "./QRCodeModal";
 import React from "react";
 
 /* Custom Wagmi Connect Button */
- export function Block3dConnectButton () {
+export const Block3dConnectButton = () => {
   const { disconnect } = useDisconnect();
   const [addressCopied, setAddressCopied] = useState(false);
   const [qrModalVisible, setQrModalVisible] = useState(false);
@@ -157,4 +157,3 @@ import React from "react";
     </ConnectButton.Custom>
   );
 };
-

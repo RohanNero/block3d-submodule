@@ -1,5 +1,7 @@
 # Block3d
 
+![image](./public/block3d-infographic.png)
+
 Block3d is an open-source authentication toolkit designed to streamline access control within Nextjs dapps. Developers can dynamically restrict specific routes using a rule-based configuration.
 
 This `README` contains all the necessary information needed to integrate block3d into your nextjs project. You may view the [full documentation here](https://block3d.gitbook.io/block3d/).
@@ -27,7 +29,7 @@ Block3d can be quickly installed by running this command:
 npm install block3d
 ```
 
-If you don't already have these installed, make sure to run this command as well:
+If you don't already have `wagmi` and `rainbowkit` installed, make sure to run this command as well:
 
 ```shell
 npm install wagmi @rainbow-me/rainbowkit
@@ -35,9 +37,7 @@ npm install wagmi @rainbow-me/rainbowkit
 
 ### Git Submodule
 
-Block3d also comes in the form of a git submodule. This allows you to quickly integrate the toolkit and, with minimal effort, be compatible with any future upgrades while maintaining a distinct separation of the submodule and the parent directory. This way you can also fork Block3d and directly edit it however you want.
-
-
+Block3d alternatively comes in the form of a git submodule. This allows you to quickly integrate the toolkit and, with minimal effort, be compatible with any future upgrades while maintaining a distinct separation of the submodule and the parent directory. This way you can also fork Block3d and directly edit it however you want.
 
 ```shell
 git submodule add https://github.com/RohanNero/block3d-submodule
@@ -51,7 +51,7 @@ The `Block3r` component lives at the app's root and wraps the entire site. It co
 
 _If you are not using a layout file, wrap the root app.tsx file instead._
 
-Note: Currently your root layout must have `"use client";` declared at the top of the file.
+**Note:** Currently your root layout must have `"use client";` declared at the top of the file.
 
 ```typescript
 /*  src/app/layout.tsx  */
@@ -81,7 +81,7 @@ This section goes over the `blocked.config.ts` file in detail. The app regularly
 
 ### Creating config
 
-Begin by creating a `block3d.config.ts` file at your project's root. Next, create a `block3dConfig` object and make sure it is marked as export default.
+Begin by creating a `block3d.config.ts` file at your project's root. Next, create a `block3dConfig` object and make sure it is exported.
 
 ```typescript
 /*  block3d.config.ts  */
@@ -191,7 +191,7 @@ const block3dConfig = {
     {
       title: "Hold at least 1 ETH",
       type: "token",
-      contract: [
+      contracts: [
         {
           address: "0x0000000000000000000000000000000000000000",
           chainId: 1,
@@ -202,7 +202,7 @@ const block3dConfig = {
     {
       title: "Hold at least 500 USDC",
       type: "token",
-      contract: [
+      contracts: [
         {
           address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
           chainId: 1,
@@ -229,7 +229,7 @@ const block3dConfig = {
     {
       title: "Own a Milady",
       type: "nft",
-      contract: [
+      contracts: [
         {
           address: "0x5Af0D9827E0c53E4799BB226655A1de152A425a5",
           chainId: 1,
@@ -240,7 +240,7 @@ const block3dConfig = {
     {
       title: "Own a Remilio",
       type: "nft",
-      contract: [
+      contracts: [
         {
           address: "0xD3D9ddd0CF0A5F0BFB8f7fcEAe075DF687eAEBaB",
           chainId: 1,
@@ -251,7 +251,7 @@ const block3dConfig = {
     {
       title: "Own a Bonkler",
       type: "nft",
-      contract: [
+      contracts: [
         {
           address: "0xABFaE8A54e6817F57F9De7796044E9a60e61ad67",
           chainId: 1,
@@ -264,3 +264,9 @@ const block3dConfig = {
 
 export default block3dConfig;
 ```
+
+### Issues
+
+If you run into any issues or have any feature requests please open an issue [here](https://github.com/RohanNero/block3d/issues).
+
+Pull Requests are also welcome!
