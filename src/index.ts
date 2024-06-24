@@ -21,4 +21,4 @@ export * from "./utils/getRpcUrls";
 
 // Import CSS
 
-import "styles.css";
+import "../styles.css";
