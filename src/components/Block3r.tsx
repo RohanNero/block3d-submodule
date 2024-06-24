@@ -1,14 +1,12 @@
 "use client";
+
 import React from "react";
-import { Config, WagmiProvider } from "wagmi";
-import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
-import "@rainbow-me/rainbowkit/styles.css";
-import { Block3rContent } from "./Block3rContent";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ScaffoldEthAppWithProviders } from "../../../components/ScaffoldEthAppWithProviders";
 import "../../styles.css";
 import { Block3dConfig } from "../types/block3d";
-
-const queryClient = new QueryClient();
+import { Block3rContent } from "./Block3rContent";
+import "@rainbow-me/rainbowkit/styles.css";
+import { Config } from "wagmi";
 
 interface Block3rProps {
   children: React.ReactNode;
@@ -22,23 +20,12 @@ interface Block3rProps {
  * 2. Should get the user's address, (undefined if not connected), then compare it to our config ruleset
  * 3. Start with `simple` restriction type and move onto `token` after it is functional
  */
-export function Block3r({
-  children,
-  wagmiConfig,
-  block3dConfig,
-}: Block3rProps) {
+export function Block3r({ children, wagmiConfig, block3dConfig }: Block3rProps) {
   return (
-    <WagmiProvider config={wagmiConfig}>
-      <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider>
-          <Block3rContent
-            block3dConfig={block3dConfig}
-            wagmiConfig={wagmiConfig}
-          >
-            {children}
-          </Block3rContent>
-        </RainbowKitProvider>
-      </QueryClientProvider>
-    </WagmiProvider>
+    <ScaffoldEthAppWithProviders>
+      <Block3rContent block3dConfig={block3dConfig} wagmiConfig={wagmiConfig}>
+        {children}
+      </Block3rContent>
+    </ScaffoldEthAppWithProviders>
   );
 }

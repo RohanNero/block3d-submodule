@@ -1,3 +1,6 @@
+// Import CSS
+import "../styles.css";
+
 // Export components
 export * from "./components/Block3d";
 export * from "./components/Block3dConnectButton";
@@ -18,7 +21,3 @@ export * from "./utils/checkIsRoutePublic";
 export * from "./utils/checkNftRules";
 export * from "./utils/checkBlock3d";
 export * from "./utils/getRpcUrls";
-
-// Import CSS
-
-import "styles.css";
